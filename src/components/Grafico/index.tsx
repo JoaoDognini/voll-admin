@@ -4,6 +4,7 @@ import IConsulta from "../types/IConsulta";
 import useDadosGrafico from "./useDadosGrafico";
 import styled from "styled-components";
 import Titulo from "../Titulo";
+import Subtitulo from "../Subtitulo";
 
 interface GraficoProps {
 	profissionais: IProfissional[] | null;

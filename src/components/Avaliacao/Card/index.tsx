@@ -1,0 +1,74 @@
+import { Rating } from "@mui/material";
+import IProfissional from "../../types/IProfissional";
+import styled from "styled-components";
+
+const ContainerEstilizado = styled.div`
+	flex: 40%;
+	max-width: 100%;
+	background-color: #FFF;
+	padding: 1em;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+	border-radius: 8px;
+	color: var(--cinza);
+	margin: 1em 2em 1em;
+`
+
+const ListaEstilizado = styled.ul`
+	display: flex;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	justify-content: space-between;
+	width: 100%;
+`
+
+const ItemEstilizado = styled.li`
+	list-style-type: none;
+`
+
+const ItemInformacoesEstilizado = styled(ItemEstilizado)`
+    flex-grow: 1;
+`
+
+const ImagemEstilizada = styled.img`
+    border-radius: 100%;
+    width: 64px;
+    object-fit: cover;
+    height: 64px;
+    border: 2px solid var(--azul-claro);
+    margin-right: 1em;
+`
+
+const ParagrafoNomeEstilizado = styled.p`
+    font-weight: 700;
+	margin: 0;
+`
+
+const ParagrafoEstilizado = styled.p`
+    margin: .5em 0;
+    font-size: 14px;
+`
+
+export default function Card({ profissional }: { profissional: IProfissional }) {
+	return (
+		<ContainerEstilizado>
+			<ListaEstilizado>
+				<ItemEstilizado>
+					<ImagemEstilizada src={profissional.imagem} alt={`Foto de Perfil de ${profissional.nome}`} />
+				</ItemEstilizado>
+				<ItemInformacoesEstilizado>
+					<ParagrafoNomeEstilizado>{profissional.nome}</ParagrafoNomeEstilizado>
+					<ParagrafoEstilizado>{profissional.especialidade}</ParagrafoEstilizado>
+				</ItemInformacoesEstilizado>
+				<ItemEstilizado>
+					<Rating
+						name="simple-controlled"
+						value={profissional.nota}
+						readOnly
+						size="large"
+					/>
+				</ItemEstilizado>
+			</ListaEstilizado>
+		</ContainerEstilizado>
+	)
+}

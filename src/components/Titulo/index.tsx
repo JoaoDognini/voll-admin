@@ -25,11 +25,14 @@ const SpanEstilizado = styled.span<TituloProps>`
 
 const TituloEstilizado = styled.h2`
 	color: var(--azul-claro);
+	margin: 0;
 `
 
 const ContainerEstilizado = styled.div`
 	display: flex;
 	align-items: center;
+	gap: 10px;
+	margin: 24px 0 12px 0;
 `
 
 export default function Titulo({ imagem, children }: TituloProps) {

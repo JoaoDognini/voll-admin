@@ -31,7 +31,7 @@ const ItemInformacoesEstilizado = styled(ItemEstilizado)`
 const Container = styled.div`
 	display: flex;
 	text-align: center;
-	height: 52px;
+	height: 35px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 	border-radius: 8px;
 `
@@ -39,7 +39,7 @@ const Container = styled.div`
 const SpanEstilizado = styled.span`
 	background-image: url(${search});
 	background-repeat: no-repeat;
-	width: 52px;
+	width: 35px;
 	background-color: #EDEDED;
 	background-position: center;
 	border-radius: 8px 0 0 8px;

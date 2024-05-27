@@ -1,6 +1,6 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
-import IProfissional from "../types/IProfissional";
-import IConsulta from "../types/IConsulta";
+import IProfissional from "../../types/IProfissional";
+import IConsulta from "../../types/IConsulta";
 import useDadosGrafico from "./useDadosGrafico";
 import styled from "styled-components";
 

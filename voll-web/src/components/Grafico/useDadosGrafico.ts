@@ -1,5 +1,5 @@
-import IConsulta from "../types/IConsulta";
-import IProfissional from "../types/IProfissional";
+import IConsulta from "../../types/IConsulta";
+import IProfissional from "../../types/IProfissional";
 
 interface IDados {
 	nome: string,

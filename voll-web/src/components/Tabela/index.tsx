@@ -1,5 +1,5 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, tableCellClasses } from "@mui/material";
-import IConsulta from "../types/IConsulta";
+import IConsulta from "../../types/IConsulta";
 import styled from "@emotion/styled";
 import Titulo from "../Titulo";
 import Botao from "../Botao";

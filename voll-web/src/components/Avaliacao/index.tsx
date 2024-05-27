@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import IProfissional from "../types/IProfissional"
+import IProfissional from "../../types/IProfissional"
 import Card from "./Card"
 import Titulo from "../Titulo"
 import Subtitulo from "../Subtitulo"

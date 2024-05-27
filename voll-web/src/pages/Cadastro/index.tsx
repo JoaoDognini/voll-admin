@@ -3,6 +3,9 @@ import { useState } from 'react';
 import styled from 'styled-components'
 import CampoDigitacao from '../../components/CampoDigitacao';
 import Botao from '../../components/Botao';
+import IClinica from '../../types/IClinica';
+import usePost from '../../usePost';
+import { useNavigate } from 'react-router-dom';
 
 interface PropsCustomizadas {
 	cor: string;
@@ -52,10 +55,33 @@ export default function Cadastro() {
 	const [numero, setNumero] = useState('');
 	const [complemento, setComplemento] = useState('');
 	const [estado, setEstado] = useState('');
+	const { cadastrarDados, erro, sucesso } = usePost();
+	const navigate = useNavigate();
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
+		const clinica: IClinica = {
+			nome: nome,
+			email: email,
+			senha: senha,
+			endereco: {
+				cep: cep,
+				rua: rua,
+				numero: numero,
+				complemento: complemento,
+				estado: estado,
+			}
+		}
+
+		if (etapaAtiva !== 0) {
+			try {
+				cadastrarDados({ url: 'clinica', dados: clinica })
+				navigate('/login')
+			} catch (error) {
+				erro && alert('Erro ao cadastrar os dados')
+			}
+		}
 
 		setEtapaAtiva(etapaAtiva + 1);
 	}

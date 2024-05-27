@@ -1,5 +1,5 @@
 import { Rating } from "@mui/material";
-import IProfissional from "../../types/IProfissional";
+import IProfissional from "../../../types/IProfissional";
 import styled from "styled-components";
 
 const ContainerEstilizado = styled.div`

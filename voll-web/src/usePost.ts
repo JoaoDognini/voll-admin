@@ -2,7 +2,8 @@ import { useState } from "react";
 
 interface CadastroProps<T> {
 	url: string
-	dados: T
+	dados: T,
+	token?: string
 }
 
 export default function usePost() {
@@ -10,13 +11,17 @@ export default function usePost() {
 	const [sucesso, setSucesso] = useState(false);
 	const [resposta, setResposta] = useState('');
 
-	async function cadastrarDados<T>({ url, dados }: CadastroProps<T>) {
+	async function cadastrarDados<T>({ url, dados, token }: CadastroProps<T>) {
+		const headers: HeadersInit = {
+			'Content-Type': 'application/json'
+		}
+
+		if (token) headers['Authorization'] = `Bearer ${token}`;
+
 		try {
 			const resposta = await fetch(`http://localhost:8080/${url}`, {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
+				headers,
 				body: JSON.stringify(dados)
 			})
 
